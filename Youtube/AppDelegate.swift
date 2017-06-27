@@ -16,6 +16,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        window?.makeKeyAndVisible()  // shows the window and makes it key window
+        let layout = UICollectionViewFlowLayout() /* layout object that organizes items into a grid with optional header and footer views for each section */
+        window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout:layout))
+        // 
         return true
     }
 
