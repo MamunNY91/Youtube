@@ -8,6 +8,8 @@
 
 import UIKit
 
+
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -20,7 +22,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()  // shows the window and makes it key window
         let layout = UICollectionViewFlowLayout() /* layout object that organizes items into a grid with optional header and footer views for each section */
         window?.rootViewController = UINavigationController(rootViewController: HomeController(collectionViewLayout:layout))
-        // 
+        UINavigationBar.appearance().barTintColor = UIColor.rgb(96, green: 98, blue: 229)
+        application.statusBarStyle = .LightContent
+        //to change the background color of status bar
+        let statusBarBackgroundView = UIView()
+        statusBarBackgroundView.backgroundColor = UIColor.rgb(59, green: 73, blue: 206)
+        window?.addSubview(statusBarBackgroundView)
+        window?.addConstraintWithFormat("H:|[v0]|", views: statusBarBackgroundView)
+        window?.addConstraintWithFormat("V:|[v0(20)]", views: statusBarBackgroundView)
         return true
     }
 
