@@ -30,6 +30,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.addSubview(statusBarBackgroundView)
         window?.addConstraintWithFormat("H:|[v0]|", views: statusBarBackgroundView)
         window?.addConstraintWithFormat("V:|[v0(20)]", views: statusBarBackgroundView)
+        //remove shadow from navbar
+        UINavigationBar.appearance().shadowImage = UIImage()
+        UINavigationBar.appearance().setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        
         return true
     }
 

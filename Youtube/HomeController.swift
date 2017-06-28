@@ -21,8 +21,19 @@ class HomeController: UICollectionViewController,UICollectionViewDelegateFlowLay
         titleLabel.font = UIFont.systemFontOfSize(18)
         navigationController?.navigationBar.translucent = false
         collectionView?.backgroundColor = UIColor.whiteColor()
+        setupMenuBar()
+        collectionView?.contentInset = UIEdgeInsetsMake(50, 0, 0, 0)
+        collectionView?.scrollIndicatorInsets = UIEdgeInsetsMake(50, 0, 0, 0)
     }
-
+    let menuBar:MenuBar = {
+        let mb = MenuBar()
+        return mb
+    }()
+    private func setupMenuBar()  {
+        view.addSubview(menuBar)
+        view.addConstraintWithFormat("H:|[v0]|", views: menuBar)
+        view.addConstraintWithFormat("V:|[v0(50)]", views: menuBar)
+    }
     
     override func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 5
